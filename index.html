@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+  <title>TIDES & TIMBER</title>
+
+  <style>
+    #map { height: 400px; width: 100%;}
+  </style>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">TIDES & TIMBER</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Experience</a></li>
+        <li><a href="#">Domes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Experience</a></li>
+        <li><a href="#">Domes</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <img src='images/ttcolor.png' style="height:450px; margin: 50px;">
+        </div>
+        <div class="row center">
+          <a href="" id="download-button" class="btn-large waves-effect waves-light" style='margin-bottom:50px; background-color: #32b4c2;'>Book now</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="images/waweig90.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>A unique experience</h4>
+          <div class='col s12 m6 l6'>
+            <p class="left-align light">The world's highest tides of the Bay of Fundy. Charming Saint Andrews-by-the-sea. One of Canada's heritage rivers. St. Croix island International Historic site where Samuel de Champlaine founded the first French settlement in North America. Glamping.</p>
+          </div>
+          <div class='col s12 m6 l6'>
+            <img src='images/peninsula.jpg' width='100%'>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Safely experience the world's highest tides paddling the Waweig.</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="images/sunset.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Some other section</h4>
+          <p class="left-align light">, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">Sleep in the forest in luxury</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="images/porch.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="row">
+    <div style="margin-left: 20px;margin-right: 20px; margin-top: 20px;">
+      <div class="col s12 m6 l4" >
+        <img class="materialboxed" width="100%" src="images/hightide.jpg">
+      </div>
+      <div class="col s12 m6 l4" >
+        <img class="materialboxed" width="100%" src="images/winter.jpg">
+      </div>
+      <div class="col s12 m6 l4" >
+        <img class="materialboxed" width="100%" src="images/evening.jpg">
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer" style='background: #32b4c2'>
+    <div class="container">
+      <div class="row">
+        <div class="col l3 s6">
+          <img src='images/ttblackwhite.svg' style="width:200px">
+        </div>
+        <div class="col l9 s6">
+          <h5 style="margin-top:50px; color: black;">Isobel and Ryan</h5>
+          <p style="color: black;">We want to do something amazing in the world :-)</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.materialboxed');
+      var instances = M.Materialbox.init(elems);
+    });
+
+    var map = L.map('map').setView([45.12321752328502, -67.10432442713933], 11);
+    map.scrollWheelZoom.disable();
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    L.marker([45.18509228269589, -67.14192713037261]).addTo(map)
+    .bindPopup('TIDES & TIMBER.<br> Glamping.')
+    .openPopup();
+  </script>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
